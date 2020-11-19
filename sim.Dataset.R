@@ -18,17 +18,8 @@ for (i in 1:n){
   for (j in 1:3) {
     sim.data[i,j] = rbinom(n=1, size = 1, prob = tau.matrix[cls,j])
   }
-  cls.Prob =sim.data[i,1]+sim.data[i,2]
-  if( cls.Prob == 0){ 
-    sim.data[i,4] = rbinom(n=1, size = 1, prob = 0.9)
-  } else if (cls.Prob == 2) {
-    sim.data[i,4] = rbinom(n=1, size = 1, prob = 0.2)
-  } else {
-    if (sim.data[i,1] == 0) { 
-      sim.data[i,4] = rbinom(n=1, size = 1, prob = 0.7)
-    } else { 
-      sim.data[i,4] = rbinom(n=1, size = 1, prob = 0.5) }
-  }
+  cls.Prob = 4*sim.data[i,1] + 2*sim.data[i,2] + 1*sim.data[i,3] + 1
+  sim.data[i,4] = rbinom(n=1, size = 1, prob = prob.table[cls.Prob])
 }
 ##-----
 
