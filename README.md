@@ -4,4 +4,9 @@
 2. UncertaintyFunction.R incorporate 4 function for analysis binary levels causes.
   - Data2EY.bayes
   - Data2EY.bayes.marginal 
+  - Data2EY.bootstrap
   - Data2EY.bootstrap.marginal
+
+ It also incoporate two plot function
+  - plot.marginal
+  - plot.combined
